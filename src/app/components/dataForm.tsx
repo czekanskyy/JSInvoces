@@ -1,22 +1,24 @@
-import Buyer from './buyer';
-import Dates from './dates';
-import Items from './items';
-import Payment from './payment';
-import Seller from './seller';
+import Buyer from './sections/buyer';
+import Dates from './sections/dates';
+import Payment from './sections/payment';
+import Products from './sections/products';
+import Seller from './sections/seller';
 
 const DataForm = () => {
   return (
-    <form className='grid grid-cols-2 bg-white p-12 rounded-lg shadow gap-x-8 gap-y-4'>
-      <h1 className='text-4xl font-semibold mb-2 col-span-2'>Invoces Generator</h1>
-      <h2 className='text-2xl font-light col-span-2'>Seller & Buyer info:</h2>
+    <form className='bg-white w-1/2 h-screen overflow-scroll p-8 flex flex-col gap-4'>
+      <h1 className='text-4xl font-semibold mb-6 text-center'>
+        <span className='inline-block pl-4 pt-4 pr-1 pb-1 bg-yellow-300 rounded'>JS</span> Invoces Generator
+      </h1>
       <Seller />
+      <hr className='my-6' />
       <Buyer />
-      <h2 className='text-2xl font-light mt-2'>Dates:</h2>
-      <h2 className='text-2xl font-light mt-2'>Payment info:</h2>
+      <hr className='my-6' />
       <Dates />
+      <hr className='my-6' />
       <Payment />
-      <h2 className='text-2xl font-light col-span-2'>Items:</h2>
-      <Items />
+      <hr className='my-6' />
+      <Products />
     </form>
   );
 };
