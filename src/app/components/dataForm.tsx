@@ -8,7 +8,7 @@ const DataForm = () => {
   return (
     <form className='bg-white 2xl:w-1/2 h-screen overflow-scroll p-8 flex flex-col gap-4'>
       <h1 className='text-4xl font-semibold mb-6 text-center'>
-        <span className='inline-block pl-4 pt-4 pr-1 pb-1 bg-yellow-300 rounded'>JS</span> Invoces Generator
+        <span className='inline-block pl-4 pt-4 pr-1 pb-1 bg-yellow-300 rounded'>JS</span> Invoices Generator
       </h1>
       <Seller />
       <hr className='my-6' />
