@@ -6,7 +6,7 @@ import Seller from './sections/seller';
 
 const DataForm = () => {
   return (
-    <form className='bg-white w-1/2 h-screen overflow-scroll p-8 flex flex-col gap-4'>
+    <form className='bg-white 2xl:w-1/2 h-screen overflow-scroll p-8 flex flex-col gap-4'>
       <h1 className='text-4xl font-semibold mb-6 text-center'>
         <span className='inline-block pl-4 pt-4 pr-1 pb-1 bg-yellow-300 rounded'>JS</span> Invoces Generator
       </h1>
@@ -16,9 +16,9 @@ const DataForm = () => {
       <hr className='my-6' />
       <Dates />
       <hr className='my-6' />
-      <Payment />
-      <hr className='my-6' />
       <Products />
+      <hr className='my-6' />
+      <Payment />
     </form>
   );
 };
