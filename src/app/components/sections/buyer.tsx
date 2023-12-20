@@ -1,107 +1,26 @@
+import { countries } from '@/data/countries';
+import Divider from '../UI/divider';
+import Input from '../UI/input';
+import SectionWrapper from './sectionWrapper';
+import Select from '../UI/select';
+
 const Buyer = () => (
-  <section className='grid grid-cols-3 gap-6'>
-    <div className='flex flex-col gap-2'>
-      <h2 className='text-lg font-medium'>Buyer</h2>
-      <h3 className='text-sm text-gray-600'>Provide buyer information (Full name, ID & address)</h3>
-    </div>
-    <div className='col-span-2 grid grid-cols-6 gap-x-6 gap-y-6'>
-      <div className='flex flex-col gap-2 w-full col-span-3'>
-        <label htmlFor='fullName' className='text-sm font-medium'>
-          Full name <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <input
-            type='text'
-            name='fullName'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-2 w-full col-span-3'>
-        <label htmlFor='IDNumber' className='text-sm font-medium'>
-          ID number <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <input
-            type='text'
-            name='IDNumber'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='col-span-6' />
-
-      <div className='flex flex-col gap-2 w-full col-span-3'>
-        <label htmlFor='addressLine1' className='text-sm font-medium'>
-          Address line 1 <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <input
-            type='text'
-            name='addressLine1'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-2 w-full col-span-3'>
-        <label htmlFor='addressLine2' className='text-sm font-medium'>
-          Address line 2
-        </label>
-        <div>
-          <input
-            type='text'
-            name='addressLine2'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-2 w-full col-span-2'>
-        <label htmlFor='ZIPCode' className='text-sm font-medium'>
-          ZIP code <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <input
-            type='text'
-            name='ZIPCode'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-2 w-full col-span-2'>
-        <label htmlFor='city' className='text-sm font-medium'>
-          City <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <input
-            type='text'
-            name='city'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          />
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-2 w-full col-span-2'>
-        <label htmlFor='country' className='text-sm font-medium'>
-          Country <span className='text-red-500'>*</span>
-        </label>
-        <div>
-          <select
-            name='country'
-            className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
-          >
-            <option value='Poland' selected>
-              Poland
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SectionWrapper title='Buyer' description='Provide buyer information (Full name, ID & address)'>
+    <Input label='Full name' span='col-span-3' required />
+    <Input label='ID number' span='col-span-3' required />
+    <Divider />
+    <Input label='Address line 1' span='col-span-3' required />
+    <Input label='Address line 2' span='col-span-3' />
+    <Input label='ZIP code' span='col-span-2' required />
+    <Input label='City' span='col-span-2' required />
+    <Select label='Country' span='col-span-2' required defaultValue='Poland'>
+      {countries.map(country => (
+        <option key={country.id} value={country.name}>
+          {country.name}
+        </option>
+      ))}
+    </Select>
+  </SectionWrapper>
 );
 
 export default Buyer;
