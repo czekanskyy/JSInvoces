@@ -1,7 +1,8 @@
+import Button from './UI/button';
 import Buyer from './sections/buyer';
 import Dates from './sections/dates';
-import Payment from './sections/payment';
-import Products from './sections/products';
+import Payment from './sections/payment/payment';
+import Products from './sections/products/products';
 import Seller from './sections/seller';
 
 const DataForm = () => {
@@ -19,6 +20,7 @@ const DataForm = () => {
       <Products />
       <hr className='my-6' />
       <Payment />
+      <Button text='Generate' color='btn-blue' class='w-full mt-6' />
     </form>
   );
 };

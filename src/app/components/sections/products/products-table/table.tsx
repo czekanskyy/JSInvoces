@@ -38,10 +38,8 @@ const Table = (props: propTypes) => {
           const grossValue = netValue + taxAmount;
           const currency = item.currency;
 
-          console.log(netValue, taxAmount);
-
           return (
-            <tr className={item.id % 2 == 0 ? 'bg-gray-50' : ''}>
+            <tr key={item.id} className={item.id % 2 == 0 ? 'bg-gray-50' : ''}>
               <Td>{item.id}</Td>
               <Td>{item.name}</Td>
               <Td>{item.qty}</Td>

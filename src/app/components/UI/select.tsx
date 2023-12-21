@@ -6,6 +6,7 @@ type PropTypes = {
   required?: boolean;
   span: string;
   children: React.ReactNode;
+  changeFunc?: React.ChangeEventHandler<HTMLSelectElement>;
 };
 
 const Select = (props: PropTypes) => {
@@ -21,6 +22,7 @@ const Select = (props: PropTypes) => {
         className='rounded px-2 py-1 shadow-sm bg-white outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 w-full'
         required={props.required}
         defaultValue={props.defaultValue}
+        onChange={props.changeFunc}
       >
         {props.children}
       </select>

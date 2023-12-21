@@ -12,4 +12,7 @@
   .btn-blue {
     @apply bg-blue-500 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] focus:shadow-[0_0_10px_rgba(59,130,246,0.5)];
   }
+  .btn-black {
+    @apply bg-black hover:shadow-[0_0_10px_rgba(0,0,0,0.5)] focus:shadow-[0_0_10px_rgba(0,0,0,0.5)];
+  }
 }

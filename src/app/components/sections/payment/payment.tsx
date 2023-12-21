@@ -1,12 +1,14 @@
 import { currencies } from '@/data/currencies';
-import Input from '../UI/input';
-import Select from '../UI/select';
-import SectionWrapper from './sectionWrapper';
+import Input from '../../UI/input';
+import Select from '../../UI/select';
+import SectionWrapper from '../sectionWrapper';
+import PaymentMethod from './paymentMethod';
+import Total from './paymentTotal';
 
 const Payment = () => {
   return (
     <SectionWrapper title='Payment & Notes' description='Provide data about payment (inc. payment status, method, currency etc.) and other information'>
-      <Input label='Total' span='col-span-2' defaultValue='0' />
+      <Total />
       <Input label='Paid' span='col-span-2' defaultValue='0' required />
       <Select label='Currency' span='col-span-2' required defaultValue='USD'>
         {currencies.map(currency => (
@@ -19,12 +21,7 @@ const Payment = () => {
         <option value='Paid'>Paid</option>
         <option value='Unpaid'>Unpaid</option>
       </Select>
-      <Select label='Payment method' span='col-span-3' required>
-        <option value='Credit / Debit Card'>Credit / Debit Card</option>
-        <option value='Cash'>Cash</option>
-        <option value='PayPal'>PayPal</option>
-        <option value='Other'>Other</option>
-      </Select>
+      <PaymentMethod />
       <div className='flex flex-col gap-2 w-full col-span-6'>
         <label htmlFor='notes' className='text-sm font-medium'>
           Notes
